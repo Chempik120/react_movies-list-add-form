@@ -8,13 +8,12 @@ interface Props {
   onAdd?: (movie: Movie) => void;
 }
 
-export const NewMovie: React.FC<Props> = ({ onAdd, onAddMovie }) => {
+export const NewMovie: React.FC<Props> = ({ count, onAdd, onAddMovie }) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [imgUrl, setImgUrl] = useState('');
   const [imdbUrl, setImdbUrl] = useState('');
   const [imdbId, setImdbId] = useState('');
-  const [count] = useState<number>(0);
 
   const clearForm = () => {
     setTitle('');

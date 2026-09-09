@@ -5,10 +5,7 @@ import { MoviesList } from './components/MoviesList';
 import { NewMovie } from './components/NewMovie';
 import moviesFromServer from './api/movies.json';
 
-const formattedInitialMovies: Movie[] = moviesFromServer.map(movie => ({
-  ...movie,
-  id: movie.imdbId,
-}));
+const formattedInitialMovies: Movie[] = moviesFromServer;
 
 export const App: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>(formattedInitialMovies);
@@ -16,7 +13,7 @@ export const App: React.FC = () => {
 
   const handleAddMovie = (newMovie: Movie) => {
     setMovies(prevMovies => [...prevMovies, newMovie]);
-    setCount((prevCount) => prevCount + 1);
+    setCount(prevCount => prevCount + 1);
   };
 
   return (
